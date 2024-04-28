@@ -1,3 +1,4 @@
+import { fakePostSeeder } from "./posts.seeder.js";
 import { userSeeder, fakeUserSeeder } from "./user.seeder.js";
 
 async function runSeeders(numberOfUsers) {
@@ -5,6 +6,7 @@ async function runSeeders(numberOfUsers) {
 
     await userSeeder();
     await fakeUserSeeder(numberOfUsers);
+    await fakePostSeeder(numberOfUsers)
 
     console.log('Seeders completed.');
 }
