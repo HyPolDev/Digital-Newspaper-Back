@@ -29,7 +29,7 @@ const PostSchema = new Schema(
         },
         type: {
             type: String,
-            enum: ["article", "analysis", "interview"],
+            //enum: ["article", "analysis", "interview"],
             required: true,
         },
         is_active: {

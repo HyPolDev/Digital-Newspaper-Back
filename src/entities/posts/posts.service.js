@@ -14,7 +14,6 @@ export const getAllPostsService = async (req) => {
 }
 
 export const createPostService = async (req) => {
-    console.log("0");
     const title = req.body.title
     const subTitle = req.body.subTitle
     const author = req.tokenData.realName
@@ -22,7 +21,6 @@ export const createPostService = async (req) => {
     const region = req.body.region
     const relevance = req.body.relevance
     const type = req.body.type
-    console.log("1");
 
     // still to do validations
 
@@ -35,6 +33,5 @@ export const createPostService = async (req) => {
         region: region,
         type: type
     })
-
     return post
 }
