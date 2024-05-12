@@ -1,5 +1,5 @@
 import { handleError } from "../../core/handleError.js"
-import { createPostService, getAllPostsService } from "./posts.service.js"
+import { createPostService, getAllPostsService, getPostService } from "./posts.service.js"
 
 export const getAllPosts = async (req, res) => {
     try {
@@ -27,6 +27,24 @@ export const createPost = async (req, res) => {
             success: true,
             message: "Posts created Succesfuly",
             posts: posts
+        })
+
+    } catch (error) {
+        if (error.message === "Missing data") {
+            return handleError(res, error.message, 400)
+        }
+        handleError(res, "Can not create post", 500)
+    }
+}
+
+export const getPost = async (req, res) => {
+    try {
+        const posts = await getPostService(req)
+
+        res.status(200).json({
+            success: true,
+            message: "Post retrieved Succesfuly",
+            post: posts
         })
 
     } catch (error) {

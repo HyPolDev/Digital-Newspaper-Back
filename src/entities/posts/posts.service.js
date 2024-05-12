@@ -14,15 +14,15 @@ export const getAllPostsService = async (req) => {
 }
 
 export const createPostService = async (req) => {
-    console.log("0");
+
     const title = req.body.title
     const subTitle = req.body.subTitle
     const author = req.tokenData.realName
+
     const content = req.body.content
     const region = req.body.region
     const relevance = req.body.relevance
     const type = req.body.type
-    console.log("1");
 
     // still to do validations
 
@@ -35,6 +35,19 @@ export const createPostService = async (req) => {
         region: region,
         type: type
     })
-
     return post
+}
+
+export const getPostService = async (req) => {
+
+    const id = req.params.id
+
+    const posts = await Post.findById(id)
+
+    if (posts.length == 0) {
+        throw new Error(`No posts found at page ${req.body.page}`)
+    }
+
+    return posts;
+
 }
