@@ -14,9 +14,11 @@ export const getAllPostsService = async (req) => {
 }
 
 export const createPostService = async (req) => {
+
     const title = req.body.title
     const subTitle = req.body.subTitle
     const author = req.tokenData.realName
+
     const content = req.body.content
     const region = req.body.region
     const relevance = req.body.relevance
@@ -34,4 +36,18 @@ export const createPostService = async (req) => {
         type: type
     })
     return post
+}
+
+export const getPostService = async (req) => {
+
+    const id = req.params.id
+
+    const posts = await Post.findById(id)
+
+    if (posts.length == 0) {
+        throw new Error(`No posts found at page ${req.body.page}`)
+    }
+
+    return posts;
+
 }
