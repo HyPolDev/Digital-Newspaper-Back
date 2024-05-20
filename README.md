@@ -15,6 +15,9 @@
 3.  Run and connect your mongooseDB
 4.  Run seeders:  ` $ npm run seeds `
 5.  Start server:  ` $ npm run dev `
+6.  SEEDED USERS:
+   - admin@admin.com -> 123456
+   - user@user.com   -> 123456
 
 ##  ⚙️ Endpoints
 <details>
@@ -157,8 +160,9 @@
 ## 📄 Add Ons - Bugs and Dreams
 
 - Token storage is null, i'll change it to WebStorage at some point.
-- I'd like to do the full fronted too.
-- I'd be nice to use google acc login.
-- I'd be nice to have a img database too.
+- Post Seeders are somewhat incomplete, they lack images, wich is very important in such a project
+- The endpoint documentation is NOT complete, might do that later
+- By now its really not important but a user panel would be great
+- I'd been plaing to add a post serchbar before ending the project
 
 
