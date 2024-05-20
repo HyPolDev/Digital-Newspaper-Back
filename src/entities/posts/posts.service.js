@@ -51,3 +51,12 @@ export const getPostService = async (req) => {
     return posts;
 
 }
+
+export const deletePostService = async (req) => {
+
+    const id = req.params.id
+
+    await Post.deleteOne({ _id: id })
+
+    return true
+}
