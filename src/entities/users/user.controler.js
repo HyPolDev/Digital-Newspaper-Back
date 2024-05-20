@@ -4,7 +4,7 @@ import { editProfileService } from "./user.service.js"
 export const editProfile = async (req, res) => {
 
     try {
-        console.log("0");
+
         const profile = await editProfileService(req)
 
         res.status(200).json({
