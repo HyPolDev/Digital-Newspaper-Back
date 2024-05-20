@@ -17,6 +17,7 @@
 5.  Start server:  ` $ npm run dev `
 6.  SEEDED USERS:
    - admin@admin.com -> 123456
+   - superadmin@superadmin.com  -> 123456
    - user@user.com   -> 123456
 
 ##  ⚙️ Endpoints
