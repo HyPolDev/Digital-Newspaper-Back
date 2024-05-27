@@ -1,14 +1,12 @@
 export const isAdmin = (req, res, next) => {
     try {
 
-        if (req.tokenData.roleName == "user") {
+        if (req.tokenData.role == "user") {
             return res.status(401).json({
                 success: false,
                 message: "Unauthorized"
             })
         }
-        console.log(req.tokenData.roleName)
-
         next()
 
     } catch (error) {
