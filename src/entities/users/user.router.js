@@ -7,6 +7,7 @@ import { isAdmin } from "../../validator/isAdmin.js"
 
 const router = Router()
 
+//create already in the auth controllers as register 
 router.get("/", auth, isAdmin, getAllUsers)
 router.put("/:userName", auth, isSelfOrAdmin, editProfile)
 router.delete("/:userName", auth, isSelfOrAdmin, deleteProfile)
