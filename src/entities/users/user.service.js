@@ -12,3 +12,11 @@ export const editProfileService = async (req, res) => {
 
     return updateUser
 }
+
+export const deleteProfileService = async (req, res) => {
+    const userName = req.params.userName
+
+    const userDeleted = await User.findOneAndDelete({ userName: userName })
+
+    return userDeleted
+}
