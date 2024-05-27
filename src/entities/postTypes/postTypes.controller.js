@@ -1,3 +1,4 @@
+import { handleError } from "../../core/handleError.js"
 import { createPostTypesService, deletePostsTypeService, getAllPostsTypesService, updatePostsTypesService } from "./postTypes.service.js"
 
 export const getAllPostsTypes = async (req, res) => {

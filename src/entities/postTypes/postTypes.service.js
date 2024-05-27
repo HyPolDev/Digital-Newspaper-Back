@@ -39,7 +39,7 @@ export const deletePostsTypeService = async (req) => {
 
     const name = req.params.name
 
-    await Post.deleteOne({ name: name })
+    await PostTypes.deleteOne({ name: name })
 
     return true
 }

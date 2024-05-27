@@ -9,6 +9,6 @@ const router = Router()
 router.get("/", getAllPostsTypes)
 router.post("/create", auth, isAdmin, createPostsTypes)
 router.put("/:name", auth, isAdmin, updatePostsTypes)
-router.delete("/:id", auth, isAdmin, deletePostsTypes)
+router.delete("/:name", auth, isAdmin, deletePostsTypes)
 
 export default router
